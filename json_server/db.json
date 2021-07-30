@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": " Kiến thức cơ bản của dân IT, cần học trước",
+      "description": "Kiến thức cơ bản dành cho dân IT, không phân biệt bạn theo Front-end, Back-end hay Devops"
+    },
+    {
+      "id": 2,
+      "name": "HTML và CSS từ ZERO đến HERO",
+      "description": "Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website"
+    }
+  ]
+}

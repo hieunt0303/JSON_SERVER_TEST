@@ -1,0 +1,159 @@
+CÁC HÀM BUILT-IN
+1. alert: tạo thông báo hiện ra màn hình
+2.console
+3.confirm: hiện ra bảng thông báo để nhấn Ok
+4.prompt: hiện ra thông báo và có khung để nhập vào
+5. setTimeout(function(){}, 1000) thời gian tính theo mms
+CHỈ HIỆN RA 1 LẦN 
+6.setInterval: định kì cách time sẽ chạy 1 lần
+
+JSON 
+stringify : từ js types -> JSON
+parse : từ JSON -> js types
+
+CRUD 
+Create : tạo mới -> POST
+Read  : lấy dữ liệu -> GET
+Update : cập nhập -> PUT : lấy data mới truyền vào id và xóa hết data cũ /PATCH : ghi đè key trùng, k xóa các key còn lại
+Delete : xóa -> DELETE
+
+DOM EVENT -- EVENT LISTẺNER
+1. preventDefault() : ngăn chặn hành vi mặc định
+- Vẫn sẽ có nổi bọt
+2. stopPropagation() : ngăn chặn sự nổi bọt
+- chỉ ngăn chặn đc khi event cha === event con ( click == click but click != mousedown)
+3. Sự nổi bọt
+- vd cái con là click và cái cha là mousedown thì sẽ có nổi bọt ( do bản chất cái con click = mousedown + mouseup)
+
+CÁC PHÉP TOÁN MÀ BOOL SẼ TRẢ VỀ LÀ 0
+false
+0
+''
+""
+null
+undefined
+NaN
+[]
+
+
+// string
+1.length : độ dài chuỗi
+2. tìm kiếm char : -1 là k tìm thấy
+myString.indexOf('js') : trả về vị trí đầu tiên
+myString.indexOf('js', 3) : vị trí tìm bắt đầu từ vị trí 3
+mýtring.lastIndexOf('js') : vị trí cuối
+myString.search('js') :tìm vị trí đầu tiên ( biểu thức chính quy)
+
+3.cut string
+myString.slice(2,3) : cắt từ vị trí 2 đến vị trí 3
+myString.slice(0) : cắt nguyên y như ban đầu 
+
+4.replace
+myString.replace('js','javascript') : thay thế 1 chữ đầu tiên
+myString.replace(/js/g,'javascript'): thay thế hết chữ js
+
+5. xóa bỏ dấu cách 2 bên
+myString.trim()
+
+6.split : cắt chuỗi thành array
+
+// array
+1. join: chuyển thành chuỗi khá giống split
+myArray.join(' ') 
+2. pop: xóa phần tử cuối và trả về phần tử đã xóa
+3. push : thêm phần tử vào cuối mảng( 1 hoặc nhiều) trả về chiều dài
+4. shift: xóa phần tử đầu mảng và tra về phẩn tử đã xóa
+5. unshift : thêm phần tử vào đầu mảng trả về chiều dài 
+6. splice 
+maArray.splice(2,5,' ',' ') 
+	2: vị trí bắt đầu con trỏ
+	5: số lượng element muốn xóa
+7.slice : cắt element 
+myArray.slice(1,3) : cắt từ vị trí 1 đến 3
+myArray.slice(0) : copy mảng 
+
+//object, constructor
+thêm thuộc tính
+object: .thuoctinh=....
+object constructor : .prototype.thuoctinh=....
+
+//loop
+for in : lấy ra key của đối tượng
+Object.values(....) : lấy ra values của đối tượng và chuyển thành mảng
+Object.keys(....) : lấy ra key của đối tượng và chuyển thành mảng 
+
+//array
+courses.forEach(function(course,index){
+console.log(index,course)
+}
+Hàm này là call back 
+index ( tham số thứ 2 ) : trả về số thứ tự của phần tử trong mảng
+course( tham số thứ 1) : trả về nội dung của phần tử trong mảng 
+
+courses.every(function(course,index){
+	return course.coin === 0
+})
+Trả về dạng bool là true nếu tất cả thoải mản 
+
+courses.some(function(course,index){
+	return course.coin === 0
+})
+Trả về bool là true néu có 1 cái thoải mản
+
+
+courses.find(function(course,index){
+	return course.name === 'Java'
+})
+nếu có thì trả phần tử đầu tiên đó ( trả về nguyên cái phần tử đó lun nếu là obj thì trả về obj) lun rồi ngừng vòng lặp
+k có thì trả về undefined
+
+
+courses.filter(function(course,index){	
+	return course.name === 'Java'
+})
+trả về 1 mảng các phần tử thoải mản
+
+function totalcoin(total, currentValue,currentIndex,currentArray){
+	return total+currentValue.coin
+}
+courses.reduce(totalcoin,0)
+{}
+
+reduce: return về một giá trị, mỗi lần lặp sẽ qua 1 phần tử của mảng
+lần lặp đầu tiên sẽ gán 0 cho total, 
+nếu k có tham số 0 thì lần 
+lặp đầu total sẽ lấy giá trị là nguyên cái phần tử thứ 1 của mảng 
+
+includes method ( dùng cho String và Array)
+title.includes('web',...) : trả về true nếu trong chuỗi title có chữ web
+... : vị trí bắt đầu tìm kiếm	
+
+Math
+Math.floor() : làm tròn dưới
+Math.ceil() : làm tròn trên
+Math.random(): tạo ngẫu nhiên 1 số thập phân dương nhỏ hơn 1
+Math.floor(Math.random() * n) : n là 10 thì random từ 0-10 
+Math.round() : làm tròn bình thường
+
+CALLBACK
+1. LÀ HÀM
+2. ĐƯỢC TRUYỀN QUA ĐỐI SỐ
+
+new Array(10) : 10 là độ dài của mảng
+new Array(10,11) : mảng có 2 phần tử là 10 và 11
+
+	
+method ( phương thức ) : find(....),.... -> mình làm đc gì với nó
+property ( thuộc tính) : length(),-> trong đó có cái gì
+
+Enumerable: Chỉ định xem 
+thuộc tính có thể được trả về trong vòng lặp hay không.
+
+
+///////////////////////////////////////////////////////////////////
+HTML DOM
+DOCUMENT OBJECT MODEL
+CÓ 3 THÀNH PHẦN :
+1. ELEMENT : NGUYÊN 1 CÁI THẺ TAG
+2. ATTRIBUTE : THUỘC TÍNH TRONG THẺ
+3. TEXT 
